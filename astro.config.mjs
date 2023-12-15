@@ -2,5 +2,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/test-brandfactory/'
+  site: 'https://dr-frontend.github.io',
+  base: '/test-brandfactory'
 });
