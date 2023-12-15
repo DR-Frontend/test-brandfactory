@@ -1,0 +1,49 @@
+<section id="designs" class="designs">
+  <div class="designs--info">
+    <div class="marquee">
+      <h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2><h2>diseños : </h2>
+    </div>
+    <div class="designs--images">
+      <img class="designs--image" src="../../public/imgs/design_dexter.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_mod.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_cadpa.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_evotech.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_tmn.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_geekode.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_dicard.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_tormenta.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_blackbone.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_fac.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_arcadia.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_bioax.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_beuv.webp" alt="">
+      <img class="designs--image" src="../../public/imgs/design_paris.webp" alt="">
+    </div>
+  </div>
+</section>
+
+<style>
+  .designs{
+    position: relative;
+    overflow: hidden;
+  }
+  .designs--images{
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  
+  @media (width > 768px) {
+    .designs--images{
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .designs--image{
+      transition: transform .5s ease;
+    }
+    .designs--image:hover{
+      transform: scale(1.2);
+    }
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import Techs from '../data/techs.json'
+---
+
+<section id="bio" class="bio">
+  <div class="marquee">
+    <h2>david romero : diseñador frontend : </h2><h2>david romero : diseñador frontend : </h2><h2>david romero : diseñador frontend : </h2><h2>david romero : diseñador frontend : </h2><h2>david romero : diseñador frontend : </h2>
+  </div>
+  <div class="bio--info">
+    <ul class="bio--techs">
+      {
+        Techs.map(tech => (
+          <li class="bio--techs-li">{tech.emoji} {tech.title}
+            <span> {tech.description}</span></li>
+        ))
+      }
+    </ul>
+  </div>
+  <img src="../../public/imgs/logo_8bits.svg" alt="" class="logo">
+</section>
+
+<style>
+  .bio{
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(110,45,134,1) 0%, rgba(253,187,45,1) 100%);;
+    /*background: linear-gradient(90deg, rgba(211,227,253,1) 30%, rgba(255,255,255,1) 100%);*/
+    backdrop-filter: blur(30px);
+  }
+  .bio--info{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  .bio--techs{
+    list-style: none;
+    padding: 40px 20px;
+    border-radius: 30px;
+    border: 2px solid rgba(255 255 255 / .3);
+    background-color: rgba(255 255 255 / .15);
+    box-shadow: 0 0 10px 10px rgba(0 0 0 / .1);
+  }
+  .bio--techs-li{
+    font-size: .85rem;
+    color: var(--dr-black);
+  }
+  .bio--techs-li span{
+    color: var(--dr-white);
+  }
+  .logo{
+    display: none;
+  }
+
+
+
+  /* DESKTOP */
+  @media (width > 768px) {
+    .bio--techs-li{
+      font-size: 1.5rem;
+    }
+    .logo{
+      display: block;
+      height: 200px;
+      position: absolute;
+      top: 100%;
+      left: 70%;
+      transform: rotate(-15deg);
+      transition: top .5s ease;
+    }
+    .bio:hover .logo{
+      top: 65%;
+    }
+  }
+</style>

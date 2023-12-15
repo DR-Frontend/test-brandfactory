@@ -1,0 +1,73 @@
+---
+import Sites from '../data/webs.json'
+---
+<section id="webs" class="webs">
+  <div class="marquee">
+    <h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2><h2>Websites : </h2>
+  </div>
+  <div class="webs--info">
+    {
+      Sites.map(site => (
+        <div class="webs--site">
+          <img src={site.logo} alt=""/>
+          <a href={site.link} target="_blank">Ver sitio</a>
+        </div>
+      ))
+    }
+  </div>
+  <img src="../../public/imgs/logo_html.svg" alt="" class="logo--html">
+</section>
+
+<style>
+  .webs{
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(232,83,39,1) 0%, rgba(110,45,134,1) 100%);
+    /*background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #d3e3fd 70%);*/
+  }
+  .webs--info{
+    padding-top: 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    z-index: 2;
+  }
+  .webs--site{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 2px solid rgba(255 255 255 / 1);
+    background-color: rgba(255 255 255 / .08);
+    backdrop-filter: blur(3px);
+  }
+  .webs--site img{
+    height: 50px;
+  }
+  .logo--html{
+    display: none;
+  }
+
+  @media (width > 600px) {
+    .webs--info{
+      margin: 0 auto;
+      width: 350px;
+    }
+    .logo--html{
+      display: block;
+      height: 150px;
+      position: absolute;
+      top: 100px;
+      left: -100%;
+      transform: rotate(10deg);
+      transition: left .5s ease;
+    }
+    .webs:hover .logo--html{
+      left: 0;
+    }
+  }
+
+</style>

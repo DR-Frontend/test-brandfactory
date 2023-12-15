@@ -1,0 +1,128 @@
+---
+import Jobs from '../data/experience.json'
+---
+
+<section id="experience" class="experience">
+  <div class="marquee">
+    <h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2><h2>experiencia : </h2>
+  </div>
+  
+  <div class="experiencie--info">
+    <div class="left"><p>&#60</p></div>
+    <div class="right"><p>&#62</p></div>
+
+    {
+      Jobs.map(job => (
+        <div class="experience--jobs">
+          <img src={job.logo} alt=""/>
+          <div class="experience--details">
+            <div class="experience--role">
+            <p>{job.position}</p>
+            <p>{job.date_start} - {job.date_finish}</p>
+              {job.description.map(info => (
+                <li>{info.info}</li>
+              ))}
+            </div><br/>
+            <div class="experience--goals">
+              <p>Metas:</p>
+              {
+                job.goals.map(goal => (
+                  <li>{goal.info}</li>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <img src="../../public/imgs/logo_rostro.svg" alt="" class="logo--rostro">
+</section>
+
+
+<style>
+  .left,
+  .right{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--dr-white);
+    font-size: 3rem;
+    border: 2px solid rgba(255 255 255 / .3);
+    z-index: 2;
+  }
+  .left p,
+  .right p{
+    transform: translate(0, -5px);
+  }
+  .left{
+    top: 50%;
+    left:0;
+  }
+  .right{
+    top: 50%;
+    right: 0;
+  }
+  .experience{
+    position: relative;
+    overflow: hidden;
+    padding: 10%;
+    background: linear-gradient(310deg, rgba(232,83,39,1) 0%, rgba(253,187,45,1) 50%);
+  }
+  .experiencie--info{
+    position: relative;
+    padding-top: 30px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    overflow-x: scroll;
+  }
+  .experience--jobs{
+    width: 320px;
+    padding: 10%;
+    border-radius: 30px;
+    backdrop-filter: blur(3px);
+    border: 2px solid rgba(255 255 255 / .3);
+    background-color: rgba(255 255 255 / .2);
+  }
+  .experience--jobs img{
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  .experience--details{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .logo--rostro{
+    display: none;
+  }
+
+  @media (width < 769px) {
+    .experiencie--info::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (width > 768px){
+    .logo--rostro{
+      display: block;
+      height: 160px;
+      position: absolute;
+      top: 110%;
+      left: -50px;
+      transform: rotate(-15deg);
+      transition: top .5s ease;
+    }
+    .experience:hover .logo--rostro{
+      top: 80%;
+    }
+  }
+</style>

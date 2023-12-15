@@ -1,0 +1,68 @@
+[
+  {
+    "emoji": "🖥",
+    "title": "Puesto:",
+    "description": "Diseñador Frontend"
+  },
+  {
+    "emoji": "🤩",
+    "title": "Áreas de interés:",
+    "description": "Frontend, UI, Multimedia"
+  },
+  {
+    "emoji": "💻",
+    "title": "Tecnologías Web:",
+    "description": "HTML, CSS, JS, Flex & Grid layout"
+  },
+  {
+    "emoji": "⚙️",
+    "title": "Herramientas:",
+    "description": "Terminal, FileZilla, Git, Github"
+  },
+  {
+    "emoji": "📐",
+    "title": "CMS:",
+    "description": "WordPress, WooCommerce"
+  },
+  {
+    "emoji": "🖲",
+    "title": "Diseño:",
+    "description": "Illustrator, Photoshop, Figma"
+  },
+  {
+    "emoji": "💭",
+    "title": "Conocimientos:",
+    "description": "GSAP, SASS, Bootstrap"
+  },
+  {
+    "emoji": "🧠",
+    "title": "Metodologías:",
+    "description": "BEM, Mobile First, SCRUM"
+  },
+  {
+    "emoji": "🧩",
+    "title": "Aprendiendo:",
+    "description": "Astro & React"
+  },
+  {
+    "emoji": "⌨️",
+    "title": "Editores:",
+    "description": "VSCode, Sublime Text"
+  },
+  {
+    "emoji": "🖱",
+    "title": "Sistemas Operativos:",
+    "description": "Mac, Windows"
+  },
+  {
+    "emoji": "👍",
+    "title": "Aptitudes:",
+    "description": "Trabajo en equipo, Confianza, Autodidacta"
+  },
+  {
+    "emoji": "💬",
+    "title": "Idiomas:",
+    "description": "Inglés básico/técnico, Español nativo"
+  }
+
+]

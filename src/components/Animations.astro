@@ -1,0 +1,53 @@
+<section id="animations" class="animations">
+  <div class="marquee">
+    <h2>animaciones : </h2><h2>animaciones : </h2><h2>animaciones : </h2><h2>animaciones : </h2><h2>animaciones : </h2><h2>animaciones : </h2><h2>animaciones : </h2>
+  </div>
+  <div class="animations--info">
+    <video src="../../public/video/dexter.mov" autoplay muted loop></video>
+    <video src="../../public/video/evotech.mov" autoplay muted loop></video>
+    <video src="../../public/video/gamer.mov" autoplay muted loop></video>
+    <video src="../../public/video/starwars.mov" autoplay muted loop></video>
+  </div>
+  <img src="../../public/imgs/logo_css.svg" alt="" class="logo--css">
+</section>
+
+
+<style>
+  .animations{
+    position: relative;
+    padding: 10%;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(50,50,50,1) 100%);
+  }
+  .animations--info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+  }
+  .logo--css{
+    display: none;
+  }
+
+  @media (width > 600px) {
+    .animations--info{
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  @media (width > 768px) {
+    .logo--css{
+      display: block;
+      height: 150px;
+      position: absolute;
+      top: 100px;
+      left: -100%;
+      transform: rotate(10deg);
+      transition: left .5s ease;
+    }
+    .animations:hover .logo--css{
+      left: 0;
+    }
+  }
+</style>

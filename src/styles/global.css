@@ -1,0 +1,130 @@
+:root {
+  --dr-white: hsl(0, 0%, 93%);
+  --dr-black: hsl(0, 0%, 20%);
+  --dr-purple: hsl(288, 48%, 26%);
+  --dr-purple2: hsl(288, 46%, 38%);
+  --dr-orange: #ff8000;
+  --dr-orange2: #d66000;
+  font-size: 16px;
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background-color: #eeeeee;
+}
+
+
+
+/*** FUENTES ***/
+@font-face {
+  font-family: 'text';
+  src: url('../../public/fonts/Dosis-Regular.ttf');
+}
+@font-face {
+  font-family: 'title';
+  src: url('../../public/fonts/Dosis-Bold.ttf');
+}
+
+
+
+/*** GLOBALES ***/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  max-width: 1920px;
+}
+h1,h2,h3{
+  font-family: 'title';
+}
+p, li, a, span{
+  font-family: 'text';
+}
+a{
+  padding: 5px 10px;
+  border: 1px solid var(--dr-white);
+  border-radius: 5px;
+  color: var(--dr-white);
+  text-decoration: none;
+}
+code {
+  font-family: monospace;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+/*** MARQUESINAS ***/
+.marquee{
+  width: max-content;
+  padding: 10px 0;
+  display: flex;
+  gap: 10px;
+  border: 3px solid rgba(255 255 255 / .3);
+  background-color: rgba(255 255 255 / .2);
+  backdrop-filter: blur(3px);
+
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+.marquee h2{
+  color: #222;
+  text-transform: uppercase;
+  animation: toLeft 15s linear infinite;
+}
+@keyframes toLeft {
+  0%{transform: translate(0,0);}
+  99%{opacity: 1;}
+  100%{transform: translate(-200%,0); opacity: 0;}
+}
+@media (width > 768px) {
+  .marquee h2{
+    font-size: 2rem;
+  }
+}
+
+
+
+/*** DESKTOP ***/
+@media (width > 768px) {
+  body{
+    padding: 0;
+  }
+  main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "na na"
+    "bi we"
+    "de de"
+    "an ex";
+  }
+  .nav{
+    grid-area: na;
+  }
+  .bio{
+    grid-area: bi;
+    cursor: n-resize;
+  }
+  .webs{
+    grid-area: we;
+    cursor: e-resize;
+  }
+  .designs{
+    grid-area: de;
+    cursor: s-resize;
+  }
+  .animations{
+    grid-area: an;
+    cursor: w-resize;
+  }
+  .experience{
+    grid-area: ex;
+    cursor: nw-resize;
+  }
+}
