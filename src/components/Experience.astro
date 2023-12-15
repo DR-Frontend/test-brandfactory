@@ -8,8 +8,6 @@ import Jobs from '../data/experience.json'
   </div>
   
   <div class="experiencie--info">
-    <div class="left"><p>&#60</p></div>
-    <div class="right"><p>&#62</p></div>
 
     {
       Jobs.map(job => (
@@ -17,14 +15,14 @@ import Jobs from '../data/experience.json'
           <img src={job.logo} alt=""/>
           <div class="experience--details">
             <div class="experience--role">
-            <p>{job.position}</p>
-            <p>{job.date_start} - {job.date_finish}</p>
+            <p class="experience--role-title">{job.position}</p>
+            <p class="experience--role-title">{job.date_start} - {job.date_finish}</p>
               {job.description.map(info => (
                 <li>{info.info}</li>
               ))}
             </div><br/>
             <div class="experience--goals">
-              <p>Metas:</p>
+              <p class="experience--role-title">Metas:</p>
               {
                 job.goals.map(goal => (
                   <li>{goal.info}</li>
@@ -42,37 +40,11 @@ import Jobs from '../data/experience.json'
 
 
 <style>
-  .left,
-  .right{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: var(--dr-white);
-    font-size: 3rem;
-    border: 2px solid rgba(255 255 255 / .3);
-    z-index: 2;
-  }
-  .left p,
-  .right p{
-    transform: translate(0, -5px);
-  }
-  .left{
-    top: 50%;
-    left:0;
-  }
-  .right{
-    top: 50%;
-    right: 0;
-  }
   .experience{
     position: relative;
     overflow: hidden;
     padding: 10%;
-    background: linear-gradient(310deg, rgba(232,83,39,1) 0%, rgba(253,187,45,1) 50%);
+    background: linear-gradient(135deg, rgba(232,83,39,1) 0%, rgba(253,187,45,1) 100%);
   }
   .experiencie--info{
     position: relative;
@@ -88,6 +60,7 @@ import Jobs from '../data/experience.json'
     padding: 10%;
     border-radius: 30px;
     backdrop-filter: blur(3px);
+    cursor: pointer;
     border: 2px solid rgba(255 255 255 / .3);
     background-color: rgba(255 255 255 / .2);
   }
@@ -100,16 +73,16 @@ import Jobs from '../data/experience.json'
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--dr-white);
   }
   .logo--rostro{
     display: none;
   }
-
-  @media (width < 769px) {
-    .experiencie--info::-webkit-scrollbar {
-      display: none;
-    }
+  .experience--role-title{
+    color: var(--dr-black);
   }
+
+  
 
   @media (width > 768px){
     .logo--rostro{
